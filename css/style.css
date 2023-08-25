@@ -1,0 +1,270 @@
+:root{
+    /*declaração de variáveis*/
+    --primary-dark: #101417;
+    --primary-contrast: #B91F33;
+    --primary-contrast-light: #df3e53;
+    --primary-contrast-dark: #881625;
+    --white: #ffffff;
+    --gray-light: #E1E1E1;
+    --gray-medium: #666666;
+    --secondary-contrast: #E0E34C;
+    --radius: 3px;
+}
+
+/*seletor ALL*/
+*{
+    font-family: 'Teko', sans-serif;
+    text-transform: uppercase; /*texto em maiúsculo*/    
+}
+
+body{
+    margin: 0;    
+    background-color: var(--primary-dark);    
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+
+h2{
+    font-size: 40px;
+    color: var(--white);   
+    
+    /*Posição em relação a ELE MESMO!*/
+    /* position: relative;
+    left: 0;
+    top: 0; */
+}
+
+p{
+    font-size: 18px;
+    line-height: 120%;
+    color: var(--gray-light);    
+}
+
+img{
+    /*retirar o espaço abaixo das imagens*/
+    display: block;
+}
+
+.container{
+    width: 1140px;
+    margin: 0 auto; /*centraliza a div*/        
+}
+
+.header{
+    background-color: var(--primary-dark);
+    padding: 16px 0;       
+    /*width: 100%;*/
+    
+    position: sticky; /*Posição fixa, sem permitir que outro elemento comece por trás dele*/
+    top: 0;
+    z-index: 1; /*quanto maior esse valor, mais a frente uma área com position estará*/
+}
+
+.header .container{    
+    display: flex;
+    align-items: center; /*eixo Y*/
+    justify-content: space-between; /*eixo X*/
+}
+
+.menu a{
+    color: var(--white);
+    font-size: 18px;    
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 111px;    
+}
+
+.menu a:hover{
+    color: var(--primary-contrast);
+    text-decoration: underline;
+}
+
+.hero-section{   
+    width: 100%;
+    height: 550px;
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-position: bottom center;
+    /*background-repeat: no-repeat;*/
+    background-attachment: fixed; /*imagem de fundo fixa*/
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-section h1{
+    color: var(--gray-light);
+    font-size: 96px;
+    line-height: 90%;
+}
+
+.hero-section p{
+    color: var(--gray-light);
+    font-size: 24px;
+    line-height: 120%;
+}
+
+.btn{
+    background-color: var(--primary-contrast);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 18px;
+    padding: 11px 60px 7px 60px; /*top right bottom left*/
+    border-radius: var(--radius);
+    display: inline-block;
+    border: solid 2px transparent;   
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: var(--primary-contrast-dark);
+}
+
+.btn-outline{
+    background-color: transparent;
+    border: solid 2px var(--primary-contrast);    
+}
+
+.academia{   
+    display: flex;
+    align-items: center;
+    
+    column-gap: 24px; /*espaçamento entre colunas*/
+
+    margin-top: 100px;
+    margin-bottom: 100px;        
+}
+
+.faca-parte{
+    background-color: var(--gray-light);       
+}
+
+.faca-parte h2{
+    color: var(--primary-dark);
+}
+
+.faca-parte p{
+    color: var(--gray-medium);
+}
+
+.faca-parte .content{
+    width: 850px;            
+}
+
+.faca-parte .container{
+    padding-top: 37px;
+    padding-bottom: 37px; 
+    position: relative; /*para servir de referência para o absolute da imagem*/
+}
+
+.faca-parte .image{
+    /*Posição em relação ao elemento pai (desde que ele tenha position) caso contrário será o BODY*/
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.planos{
+    text-align: center;
+    margin-top: 100px;
+}
+
+.flex-cards{    
+    display: flex;
+    column-gap: 24px;    
+}
+
+.card{
+    background-color: black;
+    /*border-width: 1px;
+    border-color: var(--gray-light);
+    border-style: solid;*/
+    border: 1px solid var(--gray-light);
+    border-radius: var(--radius);
+    padding: 30px 25px;
+    transition: 0.2s;            
+}
+
+.card:hover{
+    transform: translateY(-10px);    
+}
+
+.card h3{
+    color: var(--white);
+    font-size: 32px;
+}
+
+.price{
+    color: var(--white);
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.card ul{
+    padding-left:0;
+    text-align: left;
+    list-style-position: inside;
+    list-style-type: disc;
+    color: var(--gray-light);
+    font-size: 18px;
+    line-height: 120%;
+}
+
+.card .btn{
+    display: block;
+}
+
+.card-destaque{
+    border-color: var(--secondary-contrast) !important;
+}
+
+.card-destaque .price{
+    color: var(--secondary-contrast) !important; /*E0E34C*/
+}
+
+.contato{
+    margin-top: 100px;
+    display: flex;
+    column-gap: 24px;
+}
+
+.contato input, .contato textarea{    
+    width: 100%;
+    background-color: transparent;
+    margin-bottom: 10px;
+    border: 1px solid var(--gray-light);
+    border-radius: var(--radius);
+    padding: 10px;
+    box-sizing: border-box; /*faz com que as dimensões não sejam alteradas por padding/border*/
+    font-size: 18px;
+    color: var(--gray-light);
+}
+
+.contato textarea{
+    height: 140px;
+}
+
+.contato ::placeholder{
+    color: var(--gray-medium);
+}
+
+.footer{
+    background-color: var(--primary-contrast);
+    margin-top: 100px;
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 15px 195px;
+    box-sizing: border-box;
+    color: var(--white);
+    font-size: 18px;
+    line-height: 120%;
+}
+
+.social{
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    margin-bottom: 100px;
+}
